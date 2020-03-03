@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/teamify/static/css/main.cda1a060.chunk.css",
+    "main.js": "/teamify/static/js/main.1813e2eb.chunk.js",
+    "main.js.map": "/teamify/static/js/main.1813e2eb.chunk.js.map",
+    "runtime-main.js": "/teamify/static/js/runtime-main.2c2b92df.js",
+    "runtime-main.js.map": "/teamify/static/js/runtime-main.2c2b92df.js.map",
+    "static/js/2.b8b3a3d1.chunk.js": "/teamify/static/js/2.b8b3a3d1.chunk.js",
+    "static/js/2.b8b3a3d1.chunk.js.map": "/teamify/static/js/2.b8b3a3d1.chunk.js.map",
+    "index.html": "/teamify/index.html",
+    "precache-manifest.5861e7d3fcd953085020b29040709b59.js": "/teamify/precache-manifest.5861e7d3fcd953085020b29040709b59.js",
+    "service-worker.js": "/teamify/service-worker.js",
+    "static/css/main.cda1a060.chunk.css.map": "/teamify/static/css/main.cda1a060.chunk.css.map",
+    "static/js/2.b8b3a3d1.chunk.js.LICENSE.txt": "/teamify/static/js/2.b8b3a3d1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2c2b92df.js",
+    "static/js/2.b8b3a3d1.chunk.js",
+    "static/css/main.cda1a060.chunk.css",
+    "static/js/main.1813e2eb.chunk.js"
+  ]
+}
