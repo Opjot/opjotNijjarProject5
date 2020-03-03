@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './App.scss';
 
 import firebase from './firebaseApp'
-// import  Header from './components/Header'
+import  Header from './components/Header'
 // import Main from './components/Main.js'
+import Footer from './components/Footer'
 
 
 class App extends Component {
@@ -15,21 +16,17 @@ class App extends Component {
       teamOne:[],
       teamTwo:[],
       random:null,
+      isHidden: false,
     }
   }
 
   componentDidMount(){
     const dbRef = firebase.database().ref();
       dbRef.on('value', (response) => {
-      
         const newState = [];
-
         const data = response.val();
-
         for (let key in data) {
-          // newState.push(data[key]);
           newState.push({key: key, name: data[key]});
-          // console.log(key, data[key])
         }
 
         this.setState({
@@ -57,11 +54,6 @@ class App extends Component {
     const dbRef = firebase.database().ref();
     dbRef.child(nameId).remove()
   }
-
-  // randomNumber = () => {
-  //   [Math.floor(Math.random() * namesArray.length)]
-  //   console.log(randomNumber())
-  // }
   
   shuffle = (arr) => {
       for (let i = arr.length - 1; i > 0; i--) {
@@ -78,10 +70,7 @@ class App extends Component {
     const teamOnePlaceholder = [];
     const teamTwoPlaceholder = [];
     const copyOfNamesArray = [...this.state.namesArray];
-    
     const shuffledArray = this.shuffle(copyOfNamesArray);
-  console.log(shuffledArray);
-
 
     shuffledArray.map((name, index) => {
       if(index % 2 === 0){
@@ -91,25 +80,24 @@ class App extends Component {
       teamTwoPlaceholder.push(name);
       }
     });
-console.log(shuffledArray)
-    this.setState({
+
+    if (teamOnePlaceholder.length === teamTwoPlaceholder.length){
+      this.setState({
       teamOne: teamOnePlaceholder,
       teamTwo: teamTwoPlaceholder,
-    })
+      isHidden: true,
+      })
+    } else {
+      alert("Please add an even number of players!")
+    }
+    
   };
 
+  
   render(){
     return (
       <div className="App wrapper">
-        <header>
-          <h1>Teamify</h1>
-          <div className="instructions">
-              <h2>Instruction</h2>
-              <p>1. Insert names of all players into the text box one by one.</p>
-              <p>2. click randomize!</p>
-              <p>3. You will receive two randomly generated teams.</p>
-          </div>
-        </header>
+        <Header />
         <main>
           <div className="formbut">
             <form action="submit">
@@ -120,7 +108,7 @@ console.log(shuffledArray)
                 onChange={this.handleChange} 
                 value={this.state.userInput}  
               />
-              <button  type="submit" onClick={this.handleClick}> Add a name </button>
+              <button  type="submit" onClick={this.handleClick}> Add a name! </button>
             </form>
             <button className="random" type="submit" onClick={this.randomize}>Randomize!</button>
           </div>
@@ -139,17 +127,17 @@ console.log(shuffledArray)
               </div>
             </div>
             <div className="team1">
-              <h3>Team 1</h3>
+            {this.state.isHidden && <h3>Team 1</h3>}
               {this.state.teamOne.map((nameObject) => {
                 return (
                   <div className="teammates" key={nameObject.key}> 
-                    <p>{nameObject.name}</p>
+                      <p>{nameObject.name}</p>
                   </div>
                 )
                 })}
             </div>
             <div className="team2">
-              <h3>Team 2</h3>
+            {this.state.isHidden && <h3>Team 2</h3>}
               {this.state.teamTwo.map((nameObject) => {
                 return (
                   <div className="teammates" key={nameObject.key}> 
@@ -160,6 +148,7 @@ console.log(shuffledArray)
             </div>
           </div>
         </main>
+        <Footer />
       </div>
     );
   };

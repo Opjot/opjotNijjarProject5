@@ -1,5 +1,8 @@
 @import "./partials/setup.scss";
 
+$base-color:#ff715a;
+$second-color: #cfe5cc;
+
 body,
 h1,
 h2,
@@ -16,19 +19,21 @@ footer {
 
 h1{
   font-size:3rem;
-  background: #fde74c;
+  background: $base-color;
   padding:1rem;
   color: black;
   text-align: center;
 }
 
 h3{
-  border-bottom:0.1rem solid #fde74c
+  border-bottom:0.1rem solid $base-color;
+  font-size:1.5rem
 }
 
 .instructions{
   text-align: left;
   margin-left:5%;
+  line-height:2rem
 }
 
 label, input{
@@ -50,8 +55,8 @@ justify-content: space-between;
 }
 
 body{
-  background: #540d6e;
-  color: whitesmoke;
+  background: $second-color;
+  // color: whitesmoke;
   font-size:1.2rem;
   font-weight: bold;
 }
@@ -62,14 +67,14 @@ form button{
 }
 
 button{
-  background: #fde74c;
+  background: $base-color;
 }
 
 .random{
 padding:0 3rem;
 font-weight: bolder;
 margin-left: 5rem;
-background:#d72638;
+background:$base-color;
 border-radius: 3rem;
 }
 
@@ -100,6 +105,37 @@ label{
 
 .teammates{
 margin:1rem;
+}
+
+footer{
+  background: $base-color;
+  color:black;
+  text-align: center;
+  position: relative;
+  padding:0.5rem;
+  top:360px
+}
+.teammates p {
+font-size:1.5rem;
+}
+
+@media(max-width: 725px){
+  .formbut{
+    flex-direction: column;
+  }
+
+  .random{
+    padding:0 1rem;
+    margin-left: 0rem;
+    margin-top:0.5rem;
+    }
+
+    .userNames{
+      display:flex;
+      flex-direction: column;
+      justify-content: none;
+      }
+
 }
 
 
