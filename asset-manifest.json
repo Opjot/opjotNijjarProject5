@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/opjot-nijjar-teamify/static/css/main.cda1a060.chunk.css",
-    "main.js": "/opjot-nijjar-teamify/static/js/main.7c50683c.chunk.js",
-    "main.js.map": "/opjot-nijjar-teamify/static/js/main.7c50683c.chunk.js.map",
-    "runtime-main.js": "/opjot-nijjar-teamify/static/js/runtime-main.83120ac4.js",
-    "runtime-main.js.map": "/opjot-nijjar-teamify/static/js/runtime-main.83120ac4.js.map",
-    "static/js/2.be8e6628.chunk.js": "/opjot-nijjar-teamify/static/js/2.be8e6628.chunk.js",
-    "static/js/2.be8e6628.chunk.js.map": "/opjot-nijjar-teamify/static/js/2.be8e6628.chunk.js.map",
-    "index.html": "/opjot-nijjar-teamify/index.html",
-    "precache-manifest.26509b61ca00221142dacd1bf008f5ed.js": "/opjot-nijjar-teamify/precache-manifest.26509b61ca00221142dacd1bf008f5ed.js",
-    "service-worker.js": "/opjot-nijjar-teamify/service-worker.js",
-    "static/css/main.cda1a060.chunk.css.map": "/opjot-nijjar-teamify/static/css/main.cda1a060.chunk.css.map",
-    "static/js/2.be8e6628.chunk.js.LICENSE.txt": "/opjot-nijjar-teamify/static/js/2.be8e6628.chunk.js.LICENSE.txt"
+    "main.css": "/opjotNijjarProject5/static/css/main.cda1a060.chunk.css",
+    "main.js": "/opjotNijjarProject5/static/js/main.1000528f.chunk.js",
+    "main.js.map": "/opjotNijjarProject5/static/js/main.1000528f.chunk.js.map",
+    "runtime-main.js": "/opjotNijjarProject5/static/js/runtime-main.ee2e0aa4.js",
+    "runtime-main.js.map": "/opjotNijjarProject5/static/js/runtime-main.ee2e0aa4.js.map",
+    "static/js/2.4a6724fe.chunk.js": "/opjotNijjarProject5/static/js/2.4a6724fe.chunk.js",
+    "static/js/2.4a6724fe.chunk.js.map": "/opjotNijjarProject5/static/js/2.4a6724fe.chunk.js.map",
+    "index.html": "/opjotNijjarProject5/index.html",
+    "precache-manifest.cd0db47b5ac188d80056487926bca172.js": "/opjotNijjarProject5/precache-manifest.cd0db47b5ac188d80056487926bca172.js",
+    "service-worker.js": "/opjotNijjarProject5/service-worker.js",
+    "static/css/main.cda1a060.chunk.css.map": "/opjotNijjarProject5/static/css/main.cda1a060.chunk.css.map",
+    "static/js/2.4a6724fe.chunk.js.LICENSE.txt": "/opjotNijjarProject5/static/js/2.4a6724fe.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.83120ac4.js",
-    "static/js/2.be8e6628.chunk.js",
+    "static/js/runtime-main.ee2e0aa4.js",
+    "static/js/2.4a6724fe.chunk.js",
     "static/css/main.cda1a060.chunk.css",
-    "static/js/main.7c50683c.chunk.js"
+    "static/js/main.1000528f.chunk.js"
   ]
 }
