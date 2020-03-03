@@ -44,9 +44,13 @@ class App extends Component {
 
   handleClick = (e) => {
     e.preventDefault();
-    const dbRef = firebase.database().ref();
+    if(this.state.userInput === ""){
+      alert("Please enter a name!")
+    }else{
+      const dbRef = firebase.database().ref();
     dbRef.push(this.state.userInput);
-    this.setState({userInput:''})
+    this.setState({userInput:''});
+    }
   }
 
   removeName = (nameId) => {
@@ -54,31 +58,52 @@ class App extends Component {
     dbRef.child(nameId).remove()
   }
 
+  // randomNumber = () => {
+  //   [Math.floor(Math.random() * namesArray.length)]
+  //   console.log(randomNumber())
+  // }
+  
+  shuffle = (arr) => {
+      for (let i = arr.length - 1; i > 0; i--) {
+          const indexSwap = Math.floor(Math.random() * (i + 1));
+          const currentName = arr[i];
+          const nameSwap = arr[indexSwap];
+          arr[i] = nameSwap;
+          arr[indexSwap] = currentName;
+      };
+      return arr
+    }
+
   randomize = () => {
     const teamOnePlaceholder = [];
     const teamTwoPlaceholder = [];
-  this.state.namesArray.map((name, index) => {
-    if(index % 2 === 0){
-      teamOnePlaceholder.push(name);
-    }else
-    {
-    teamTwoPlaceholder.push(name)
-    }
-  
+    const copyOfNamesArray = [...this.state.namesArray];
+    
+    const shuffledArray = this.shuffle(copyOfNamesArray);
+  console.log(shuffledArray);
+
+
+    shuffledArray.map((name, index) => {
+      if(index % 2 === 0){
+        teamOnePlaceholder.push(name);
+      }else
+      {
+      teamTwoPlaceholder.push(name);
+      }
+    });
+console.log(shuffledArray)
     this.setState({
       teamOne: teamOnePlaceholder,
       teamTwo: teamTwoPlaceholder,
     })
-  })
   };
-
 
   render(){
     return (
-      <div className="App">
+      <div className="App wrapper">
         <header>
           <h1>Teamify</h1>
-          <div>
+          <div className="instructions">
               <h2>Instruction</h2>
               <p>1. Insert names of all players into the text box one by one.</p>
               <p>2. click randomize!</p>
@@ -86,7 +111,7 @@ class App extends Component {
           </div>
         </header>
         <main>
-          <div>
+          <div className="formbut">
             <form action="submit">
               <label htmlFor="userNames"> Please type player names. </label>
               <input 
@@ -95,17 +120,17 @@ class App extends Component {
                 onChange={this.handleChange} 
                 value={this.state.userInput}  
               />
-              <button type="submit" onClick={this.handleClick}> Add a name </button>
+              <button  type="submit" onClick={this.handleClick}> Add a name </button>
             </form>
-            <button type="submit" onClick={this.randomize}>Randomize!</button>
+            <button className="random" type="submit" onClick={this.randomize}>Randomize!</button>
           </div>
-          <div>
+          <div className="userNames">
             <div className="name">
               <h3>Names</h3>
               <div>
                 {this.state.namesArray.map((nameObject) => {
                 return (
-                  <div key={nameObject.key}> 
+                  <div className="showName" key={nameObject.key}> 
                     <p>{nameObject.name}</p>
                     <button onClick={() => this.removeName(nameObject.key)}> Remove </button>
                   </div>
@@ -113,11 +138,11 @@ class App extends Component {
                 })}
               </div>
             </div>
-            <div className="team2">
+            <div className="team1">
               <h3>Team 1</h3>
               {this.state.teamOne.map((nameObject) => {
                 return (
-                  <div key={nameObject.key}> 
+                  <div className="teammates" key={nameObject.key}> 
                     <p>{nameObject.name}</p>
                   </div>
                 )
@@ -127,7 +152,7 @@ class App extends Component {
               <h3>Team 2</h3>
               {this.state.teamTwo.map((nameObject) => {
                 return (
-                  <div key={nameObject.key}> 
+                  <div className="teammates" key={nameObject.key}> 
                     <p>{nameObject.name}</p>
                   </div>
                 )
@@ -137,7 +162,8 @@ class App extends Component {
         </main>
       </div>
     );
-  }
-}
+  };
+};
+
 
 export default App;
