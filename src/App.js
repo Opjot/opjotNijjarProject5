@@ -8,8 +8,10 @@ import Footer from './components/Footer'
 
 
 class App extends Component {
+// constructor is called to during when the page is loaded.
   constructor(){
     super()
+// state is holding data that will change over time.
     this.state = {
       namesArray:[],
       userInput:'',
@@ -21,6 +23,7 @@ class App extends Component {
   }
 
   componentDidMount(){
+// this is where we get information from firebase.
     const dbRef = firebase.database().ref();
       dbRef.on('value', (response) => {
         const newState = [];
@@ -35,10 +38,12 @@ class App extends Component {
     });
   }
 
+// changing the state.
   handleChange = (event) => {
     this.setState({userInput: event.target.value})
   }
 
+// this is where user input is being pushed to firebase and being checked for empty sting on button click. 
   handleClick = (e) => {
     e.preventDefault();
     if(this.state.userInput === ""){
@@ -50,11 +55,13 @@ class App extends Component {
     }
   }
 
+// this is a function that removes the name from the dom and firebase when the button is clicked. 
   removeName = (nameId) => {
     const dbRef = firebase.database().ref();
     dbRef.child(nameId).remove()
   }
-  
+
+// this shuffle function is used to randomize the array. (Fisher Yates Shuffle)
   shuffle = (arr) => {
       for (let i = arr.length - 1; i > 0; i--) {
           const indexSwap = Math.floor(Math.random() * (i + 1));
@@ -66,6 +73,7 @@ class App extends Component {
       return arr
     }
 
+// this randomize function is used to take the copy of the names array and use the shuffle  function to randomize the array and then populate the team 1 and team 2 arrays. The second if statement is to check for an equal number of names for equal teams in order to be displayed or else an error alert pops up. 
   randomize = () => {
     const teamOnePlaceholder = [];
     const teamTwoPlaceholder = [];
@@ -93,7 +101,7 @@ class App extends Component {
     
   };
 
-  
+// render begins here. There are header and footer component being imported. The main section is all here. Will look into putting it in a component when I have time to look into props. Input and buttons are linked to the click handlers. Dynamically populating the page with p tags based on user input. 
   render(){
     return (
       <div className="App wrapper">
