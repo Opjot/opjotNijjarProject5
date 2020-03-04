@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "32940065056cf9506de6372839ef39ae",
+    "revision": "0b1f6cbf8bc68610ad46abca79ed6e8b",
     "url": "/opjotNijjarProject5/index.html"
   },
   {
-    "revision": "d92c62480e5574d9505c",
-    "url": "/opjotNijjarProject5/static/css/main.cda1a060.chunk.css"
+    "revision": "92a6ec837afcfcb68b94",
+    "url": "/opjotNijjarProject5/static/css/main.8978616d.chunk.css"
   },
   {
     "revision": "9b0821e6027172bb5de6",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/opjotNijjarProject5/static/js/2.4a6724fe.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d92c62480e5574d9505c",
-    "url": "/opjotNijjarProject5/static/js/main.1000528f.chunk.js"
+    "revision": "92a6ec837afcfcb68b94",
+    "url": "/opjotNijjarProject5/static/js/main.2a7786c9.chunk.js"
   },
   {
     "revision": "d489e47ef1095230e964",

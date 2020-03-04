@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/opjotNijjarProject5/static/css/main.cda1a060.chunk.css",
-    "main.js": "/opjotNijjarProject5/static/js/main.1000528f.chunk.js",
-    "main.js.map": "/opjotNijjarProject5/static/js/main.1000528f.chunk.js.map",
+    "main.css": "/opjotNijjarProject5/static/css/main.8978616d.chunk.css",
+    "main.js": "/opjotNijjarProject5/static/js/main.2a7786c9.chunk.js",
+    "main.js.map": "/opjotNijjarProject5/static/js/main.2a7786c9.chunk.js.map",
     "runtime-main.js": "/opjotNijjarProject5/static/js/runtime-main.ee2e0aa4.js",
     "runtime-main.js.map": "/opjotNijjarProject5/static/js/runtime-main.ee2e0aa4.js.map",
     "static/js/2.4a6724fe.chunk.js": "/opjotNijjarProject5/static/js/2.4a6724fe.chunk.js",
     "static/js/2.4a6724fe.chunk.js.map": "/opjotNijjarProject5/static/js/2.4a6724fe.chunk.js.map",
     "index.html": "/opjotNijjarProject5/index.html",
-    "precache-manifest.cd0db47b5ac188d80056487926bca172.js": "/opjotNijjarProject5/precache-manifest.cd0db47b5ac188d80056487926bca172.js",
+    "precache-manifest.a864d16167559c4e20b1a5b7656c27cb.js": "/opjotNijjarProject5/precache-manifest.a864d16167559c4e20b1a5b7656c27cb.js",
     "service-worker.js": "/opjotNijjarProject5/service-worker.js",
-    "static/css/main.cda1a060.chunk.css.map": "/opjotNijjarProject5/static/css/main.cda1a060.chunk.css.map",
+    "static/css/main.8978616d.chunk.css.map": "/opjotNijjarProject5/static/css/main.8978616d.chunk.css.map",
     "static/js/2.4a6724fe.chunk.js.LICENSE.txt": "/opjotNijjarProject5/static/js/2.4a6724fe.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ee2e0aa4.js",
     "static/js/2.4a6724fe.chunk.js",
-    "static/css/main.cda1a060.chunk.css",
-    "static/js/main.1000528f.chunk.js"
+    "static/css/main.8978616d.chunk.css",
+    "static/js/main.2a7786c9.chunk.js"
   ]
 }
