@@ -5,6 +5,7 @@ import firebase from './firebaseApp'
 import  Header from './components/Header'
 // import Main from './components/Main.js'
 import Footer from './components/Footer'
+import Main from './Main.js'
 
 
 class App extends Component {
@@ -106,56 +107,7 @@ class App extends Component {
     return (
       <div className="App wrapper">
         <Header />
-        <main>
-          <div className="formbut">
-            <form action="submit">
-              <label htmlFor="userNames"> Please type player names. </label>
-              <input 
-                type="text" 
-                id="userNames" 
-                onChange={this.handleChange} 
-                value={this.state.userInput}  
-              />
-              <button  type="submit" onClick={this.handleClick}> Add a name! </button>
-            </form>
-            <button className="random" type="submit" onClick={this.randomize}>Randomize!</button>
-          </div>
-          <div className="userNames">
-            <div className="name">
-              <h3>Names</h3>
-              <div>
-                {this.state.namesArray.map((nameObject) => {
-                return (
-                  <div className="showName" key={nameObject.key}> 
-                    <p>{nameObject.name}</p>
-                    <button onClick={() => this.removeName(nameObject.key)}> Remove </button>
-                  </div>
-                )
-                })}
-              </div>
-            </div>
-            <div className="team1">
-            {this.state.isHidden && <h3>Team 1</h3>}
-              {this.state.teamOne.map((nameObject) => {
-                return (
-                  <div className="teammates" key={nameObject.key}> 
-                      <p>{nameObject.name}</p>
-                  </div>
-                )
-                })}
-            </div>
-            <div className="team2">
-            {this.state.isHidden && <h3>Team 2</h3>}
-              {this.state.teamTwo.map((nameObject) => {
-                return (
-                  <div className="teammates" key={nameObject.key}> 
-                    <p>{nameObject.name}</p>
-                  </div>
-                )
-                })}
-            </div>
-          </div>
-        </main>
+        <Main handleChangeProp={this.handleChange} userInputProp={this.state.userInput} handleClickProp={this.handleClick} randomizeProp={this.randomize} namesProp={this.state.namesArray} removeNameProp={this.removeName} isHiddenProp={this.state.isHidden} teamOneProp={this.state.teamOne} teamTwoProp={this.state.teamTwo}/>
         <Footer />
       </div>
     );
